@@ -1,0 +1,62 @@
+PREREQUISITE : Should have a system with installed software :-
+                        1. JDK 1.8
+                        2. Maven
+                        3. MySQL Database service running on localhost:3306 with schema "test".
+                            Make sure you adjust the application property with your database logging credentials.
+
+USER GUIDE :-
+1. An application for Entrepreneur, who like to start a new business/ company and like to see their performance.
+2. You just need to read the instruction of presented on the screen and press input for desired result.
+3. Yours performance will be judged on basis of revenue collected and stock price of your company.
+4. You will have multiple options like hire employee, launch a product for your company.
+5. You can check if market is favourable for your business decision. Additionally, we have have option to set the pace of market fluctuation.
+6. You can take finance for your startup and set the rate of interest on your loan.
+7. You can save and resume your game whenever you like. Data will be persisted in MySQL database.
+8. You will have a reputation factor which determines your company's reputation. It have impact of stock price.
+9. You will have a liability factor which determines how much you are willing to invest on your liability. Liability is directory proportional to reputation and inversely to revenue.
+10. We can see the graph at the end for changes of your company's stock price.
+
+**********************************************************************************************************************************************************************************
+RUN APPLICATION:-
+Run the application with command: "mvn spring-boot:run" from root directory.
+
+**************************************************************************************************************************************************************************************************
+FOR DEVELOPERS :-
+1. Application is focused on flexible and extensible design. There can be a lot of improvement in terms of business needs.
+    We have not focused much of business need for this revision of solution. It is highly possible that statistic says different from what business decision made.
+2. Application uses Java 8, Spring-boot 2.1, JPA, MySQL database, Mockito.
+3. Logs are captured in ./myapplication.log file. Hibernate query log is not enabled. You can enable on application.yml file.
+4. JVM switch for debugger configuration is commented in pom.xml file. We can uncomment to debug the application. We can add other jvm switches if required.
+5. Some of the design patterns/ principles used in the application.
+    a. Visitor Design pattern : MarketSituationServiceImpl@ MarketSituation accommodateMarketChanges.
+        Due to frequent changes of various FactorChangeDegree from the client. It would be cumbersome to put depending logic in separate implementations.
+        A Visitor named "MarketSituation accommodateMarketChanges" defined which delegates the request to desired implementations.
+	b. Strategy Design Pattern : We have two strategies named "accommodateMarketChanges" and "enquireMarketSituation", both implementing a common interface "MarketSituation". 
+		Different strategies is being passed based on requirement [In method : processMarketSituation() and accommodateMarketChanges()] which varies the behaviour.
+	c. Single Responsibility Principle : We have two different Interface named "MarketSituation" and "AggregateMarketFactor" for different functionality.
+		Interface MarketSituation is responsible for print or change the state of object whereas
+		Interface AggregateMarketFactor is responsible for fetching the values based of varies state of object.
+	d. Liskov's Substitution Principle : We have four different implementations of MarketFactor namely "GlobalFactor", "DomesticFactor", "BankRateFactor" and "CurrencyFluctuationFactor". 
+		We can see that all of them are keep as data type of their interface "IMarketFactor". MarketSituationServiceImpl @ Set<IMarketFactor> marketFactors
+	e. Interface Segregation Principle : We have two different Interfaces named "MainMenuService" and "MarketSituationService" for different functionality.
+	    Clients would be free to choose interface based of their requirement.
+	f. Dependency Injection Principle : We have used Spring dependency injection for injecting dependencies like
+		ProfitMakingCompanyRepository profitMakingCompanyRepository; ---- in @MainMenuServiceImpl.class
+		private MarketSituationService marketSituationService;  ---- in @MainMenuServiceImpl.class
+	g. Open for extension and close for modification Principle : We have four implementations of IMarketFactor interface. We have coded on Interface, rather than on concrete class.
+		We can easily add more concrete class, implementing interface IMarketFactor without any modification.
+	h. Adaptor Design pattern :- The purpose may be fulfilled without having an adaptor in a easier way. Adaptor is created just to demonstrate the Adaptor design pattern.
+		We have two interfaces named "MainMenuService" and "AbstractDeliverable".
+		When client have access of "MainMenuService" interface only and willing to use the functionality of "AbstractDeliverable", an Adaptor comes into picture.
+		"MainMenuService" interface maintain "has-a" relation [COMPOSITION] for Adaptor which extends "AbstractDeliverable" for functionality - method : "getCostFactor()"
+	i. Decorator Design Pattern :- We have BasicProduct class extending AbstractDeliverable. To decorate the BasicProduct, we have ProductDecorator class extending AbstractDeliverable. 
+		We have various different sub-class of ProductDecorator like ScalableProduct, ExtensibleProduct, DurableProduct which is used to decorate the product in run-time, de-coupled way.
+	j. Observer Design Pattern :- @MainMenuServiceImpl.companyNameChange(...).  profitMakingCompany acts as subject and profitMakingCompany.getDeliverables() acts as observers. 
+		Whenever the name of company changes on the profitMakingCompany, same changes would be reflected on products.
+	k. Builder Design pattern :- @ProfitMakingCompany.CompanyBuilder  demonstrate builder design pattern where ProfitMakingCompany object is created based on parameters passed in run-time.
+		Creates the complex ProfitMakingCompany object in flexible way indirectly through CompanyBuilder inner class.
+*********************************************************************************************************************************************************************************************
+TODO :-
+1. Test coverage is not complete. Need to add test cases.
+2. Need to improve business needs.
+

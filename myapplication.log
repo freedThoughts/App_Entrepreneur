@@ -1,0 +1,30 @@
+2019-01-02 20:27:42.485  INFO 1960 --- [main] c.m.e.MittiEntrepreneurApplication       : Starting MittiEntrepreneurApplication on wsmb-322 with PID 1960 (C:\Users\prku0316\OneDrive\SampleProject2\GitHubRepository\mitti-entrepreneur-2.0\target\classes started by prku0316 in C:\Users\prku0316\OneDrive\SampleProject2\GitHubRepository\mitti-entrepreneur-2.0)
+2019-01-02 20:27:42.498  INFO 1960 --- [main] c.m.e.MittiEntrepreneurApplication       : No active profile set, falling back to default profiles: default
+2019-01-02 20:27:43.969  INFO 1960 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-02 20:27:44.132  INFO 1960 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 146ms. Found 1 repository interfaces.
+2019-01-02 20:27:44.929  INFO 1960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$53bf3071] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-02 20:27:46.306  INFO 1960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-02 20:27:46.398  INFO 1960 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-02 20:27:46.399  INFO 1960 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-02 20:27:46.426  INFO 1960 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Sennheiser\SoftphoneSDK\;C:\Program Files\PuTTY\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\SlikSvn\bin;C:\Program Files (x86)\scala\bin;C:\Users\prku0316\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_181\bin;C:\apache-maven-3.5.4\bin;C:\Users\prku0316\AppData\Local\GitHubDesktop\bin;C:\Users\prku0316\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MongoDB\Server\4.0\bin;;.]
+2019-01-02 20:27:46.647  INFO 1960 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-02 20:27:46.647  INFO 1960 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4061 ms
+2019-01-02 20:27:47.050  INFO 1960 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-02 20:27:48.277  INFO 1960 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-02 20:27:48.432  INFO 1960 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-02 20:27:48.669  INFO 1960 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-02 20:27:48.673  INFO 1960 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-02 20:27:48.958  INFO 1960 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-02 20:27:49.187  INFO 1960 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-01-02 20:27:50.802  INFO 1960 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-02 20:27:51.708  INFO 1960 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-02 20:27:51.813  WARN 1960 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-02 20:27:52.500  INFO 1960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-02 20:27:52.507  INFO 1960 --- [main] c.m.e.MittiEntrepreneurApplication       : Started MittiEntrepreneurApplication in 11.341 seconds (JVM running for 21.603)
+2019-01-02 20:29:14.793  INFO 1960 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-01-02 20:29:33.349  INFO 1960 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-02 20:29:33.351  INFO 1960 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-02 20:29:33.355  INFO 1960 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-02 20:29:33.376  INFO 1960 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
